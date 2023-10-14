@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,5 +36,18 @@ public class Paciente {
 		this.cpf = dados.cpf();
 		this.endereco = new Endereco(dados.endereco());
 	}
+
+    public void atualizarInformacoes(
+		@Valid // Vai passar pelas validações de DadosAtualizacaoPaciente
+		DadosAtualizacaoPaciente dados
+	) {
+		if(dados.nome() != null) {
+			this.nome = dados.nome();
+		}
+
+		if (dados.email() != null) {
+			this.email = dados.email();
+		}
+    }
 
 }
