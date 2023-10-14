@@ -29,4 +29,7 @@ public class Endereco {
         this.uf = dados.uf();
 
     }
+
+    public void atualizarInformacoes(Endereco dados) {
+    }
 }
