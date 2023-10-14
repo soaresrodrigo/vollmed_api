@@ -1,0 +1,2 @@
+ALTER TABLE pacientes
+MODIFY cpf VARCHAR(11) NOT NULL;
